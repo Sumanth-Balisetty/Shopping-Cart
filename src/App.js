@@ -1,7 +1,6 @@
 import './App.css';
 import Cart from './Components/Cart/Cart';
 import Homepage from './Components/Homepage/Homepage';
-import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 function App() {
   return (

@@ -2,11 +2,11 @@ import './Navbar.css'
 import { FaCartShopping } from "react-icons/fa6";
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Homepage from '../Homepage/Homepage';
 const Navbar = ({count}) => {
+
   return (
     <div>
-    <div className='header sticky top-0 z-10'>
+    <div className='header sticky top-0 '>
         <div className='navbar flex items-center bg-gray-900 p-5 rounded-xl mt-[10px] '>
         <label className="relative block w-[400px]">
             
@@ -22,7 +22,6 @@ const Navbar = ({count}) => {
             </div>
         </div>
     </div>
-    <Homepage count={count} />
     </div>
   )
 }
