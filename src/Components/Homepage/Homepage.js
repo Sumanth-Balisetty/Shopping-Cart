@@ -9,11 +9,10 @@ const Homepage = () => {
         setCount(count+1)
         if(!added.includes(id)){
             setAdded((prev)=>[...prev,id])
-
         }
-
     }
     
+
   return (
     <div>
         <div className='sticky top-0 z-10'>
@@ -29,9 +28,9 @@ const Homepage = () => {
             <p>{value.name}</p>
             <div className='flex justify-between w-full items-center my-[10px] px-[20px]'>
                 <span>Rs/-{value.price}</span>
-                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-red-200 ' onClick={()=>handlerBtn(value.id)}>
+                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-gray-900 hover:text-white ' onClick={()=>handlerBtn(value.id)}>
                     <img src={cart} alt='cart' className='h-[20px]'/>
-                    {added.includes(value.id) ? `Added to cart` :`Add to cart`}</button>
+                    {added.includes(value.id) ? `item added` :`Add to cart`}</button>
                 </div>
             </div>) 
         }

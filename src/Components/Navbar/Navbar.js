@@ -2,12 +2,17 @@ import './Navbar.css'
 import { FaCartShopping } from "react-icons/fa6";
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { ImMenu3, ImMenu4 } from 'react-icons/im';
+import { useState } from 'react';
 const Navbar = ({count}) => {
-
+const [show,setShow] = useState(false);
+const hanlderNav = ()=>{
+  setShow(!show)
+}
   return (
     <div>
     <div className='header sticky top-0 '>
-        <div className='navbar flex items-center bg-gray-900 p-5 rounded-xl mt-[10px] '>
+        <div className='navbar flex items-center bg-gray-900 p-5 rounded-xl mt-[10px] relative '>
         <label className="relative block w-[400px]">
             
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -15,12 +20,30 @@ const Navbar = ({count}) => {
             </span>
             <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-lg py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
         </label>
+        <h1 className='text-white text-3xl absolute left-[50%] font-semibold font-sans italic hover:'>Shopify</h1>
             <div className='navbar-cart flex justify-center items-center p-[10px] gap-[2px]'>
                 
                 <Link to='/cart'><FaCartShopping className='text-3xl text-white'/></Link>
                 <span className=' text-white text-lg  flex justify-center items-center rounded-lg'>{count}</span>
+                <div className='ml-[30px] flex items-center'>
+                <button className='text-white text-4xl ' onClick={hanlderNav}>{show?<ImMenu3/>:<ImMenu4/>}</button></div>
             </div>
         </div>
+        {show && <div className='h-[640px] w-[250px] absolute right-[97px] top-[89px] bg-gray-900 rounded-lg flex flex-col items-center justify-start py-[20px] px-[10px]  text-white text-lg text-center font-semibold gap-[20px]'>
+            <Link className='w-[70%] border-transparent border-b-2 hover:border-white'>Account</Link>
+            <Link  className='w-[70%] border-transparent border-b-2 hover:border-white'>Your Orders</Link>
+            <Link  className=' w-[70%] border-transparent border-b-2 hover:border-white'>Help & Support</Link>
+            <Link  className='w-[80%] border-transparent border-b-2 hover:border-white'>Terms & Conditions</Link>
+            <hr className='border-[1px] border-white w-[100%]' />
+            <Link className='  w-[70%] border-transparent border-b-2 hover:border-white'>Mens Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  border-transparent border-b-2 hover:border-white'>Womens Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Kids Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Party Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Ethnic Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  '>Foot Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  '>Sports Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  '>Winter Wear</Link>
+        </div>}
     </div>
     </div>
   )
