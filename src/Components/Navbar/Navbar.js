@@ -39,7 +39,7 @@ const hanlderNav = ()=>{
             <Link  className=' w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><FcOnlineSupport/> Help & Support</Link>
             <Link  className='w-[100%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><IoTerminalOutline />Terms & Conditions</Link>
                           <hr className='border-[1px] border-white w-[100%]' />
-            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white' onClick={()=>{return clicked,console.log('clicked')}} >Mens Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white'>Mens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  border-transparent border-b-2 hover:border-white'>Womens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Kids Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Party Wear</Link>

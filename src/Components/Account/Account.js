@@ -5,10 +5,17 @@ import { RiFolderInfoFill, RiFolderUserFill } from 'react-icons/ri'
 import { MdPayment } from 'react-icons/md'
 import Personal from '../Personal/Personal'
 import { FaUser } from 'react-icons/fa6'
+import Wishlist from '../Wishlist/Wishlist'
 const Account = () => {
   const [show,setShow] = useState(false);
   const linkhandler=(id)=>{
     setShow(!show)
+    setShow2(false)
+  }
+  const [show2,setShow2] = useState(false);
+  const linkhandler2=()=>{
+    setShow2(!show2)
+    setShow(false)
   }
   return (
     <div className='flex justify-start relative bg-slate-200 h-[100vh] w-[100%]'>
@@ -24,21 +31,22 @@ const Account = () => {
             <div className='flex flex-col mt-[15px] w-[300px]'>
             <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px]'><RiFolderInfoFill className='text-blue-500'/> MY ORDERS</Link>
             <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px] border-t-2'><FaUser className='text-blue-500'/> ACCOUNT SETTING</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50' onClick={()=>linkhandler(1)}>Personal Information</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>Manage Addresses</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>Pan Card Information</Link>
+            <Link className={`text-[17px]  ${!show ? 'text-gray-600 bg-white font-normal': 'bg-cyan-50 font-semibold text-sky-600'}  p-[10px]  flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold`} onClick={()=>linkhandler(1)}>Personal Information</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Manage Addresses</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Pan Card Information</Link>
             <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px] border-t-2'><MdPayment  className='text-blue-500'/> PAYMENTS</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>Gift Cards</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>Saved Upi</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>Saved Cards</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Gift Cards</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Saved Upi</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Saved Cards</Link>
             <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px] border-t-2'><RiFolderUserFill className='text-blue-500'/> MY STUFF</Link>            </div>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>My Coupons</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>My Reviews & Ratings</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>All Notifications</Link>
-            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50'>My Wishlist</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>My Coupons</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>My Reviews & Ratings</Link>
+            <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>All Notifications</Link>
+          <Link className={`text-[17px] ${!show2 ? 'text-gray-600 bg-white font-normal': 'bg-cyan-50 font-semibold text-sky-600'} p-[10px] flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold`} onClick={linkhandler2} >My Wishlist</Link>
         </div>
         <div className='bg-cyan-50 h-[auto] w-[70%] mt-[20px] ml-[50px] rounded-[6px]' >
             {show  ? <Personal/> : ''}
+            {show2 ? <Wishlist/>: ''}
         </div>
     </div>
   )
