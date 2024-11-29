@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const [show,setShow] = useState(false);
-  useEffect(()=>{
+  const handler = ()=>{
     setShow(true)
+  }
+  useEffect(()=>{
   },[]
 )
   return (
     <div className='h-[100%] w-[100%] text-center relative'>
       <div className='flex justify-center flex-col items-center'>
-        <Link to='/'
+        <Link to='/home'
           className='bg-gray-900 text-white font-bold text-xl px-[10px] py-[20px] w-[40px] h-[20px] flex justify-center items-center rounded-full subpixel-antialiased absolute top-[30px] left-[30px]'>
           <FaArrowLeft/>
         </Link>
@@ -29,7 +31,7 @@ const Cart = () => {
           :<p className='text-black text-xl'>Your Cart Is Empty.</p>}
           </div>
           <div className='flex justify-end w-[80%]'>
-        <button className='bg-gray-900 text-white font-bold text-xl py-[10px] w-[200px] rounded-2xl hover:bg-black'>CheckOut</button>
+        <button className='bg-gray-900 text-white font-bold text-xl py-[10px] w-[200px] rounded-2xl hover:bg-black' onClick={handler}>CheckOut</button>
         </div>
         </div>
     </div>
