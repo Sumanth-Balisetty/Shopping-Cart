@@ -6,15 +6,24 @@ import { MdPayment } from 'react-icons/md'
 import Personal from '../Personal/Personal'
 import { FaUser } from 'react-icons/fa6'
 import Wishlist from '../Wishlist/Wishlist'
+import Orders from '../Orders/Orders'
 const Account = () => {
   const [show,setShow] = useState(false);
   const linkhandler=(id)=>{
     setShow(!show)
     setShow2(false)
+    setShow3(false)
   }
   const [show2,setShow2] = useState(false);
   const linkhandler2=()=>{
     setShow2(!show2)
+    setShow(false)
+    setShow3(false)
+  }
+  const [show3,setShow3] = useState(false);
+  const linkhandler3=()=>{
+    setShow3(!show3)
+    setShow2(false)
     setShow(false)
   }
   return (
@@ -29,7 +38,7 @@ const Account = () => {
             </div>
             </div>
             <div className='flex flex-col mt-[15px] w-[300px]'>
-            <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px]'><RiFolderInfoFill className='text-blue-500'/> MY ORDERS</Link>
+            <Link className={`text-[20px] font-semibold p-[20px] text-gray-500 ${!show3 ? 'bg-white' : 'bg-cyan-50'} flex items-center gap-[20px]`} onClick={linkhandler3} ><RiFolderInfoFill className='text-blue-500' /> MY ORDERS</Link>
             <Link className='text-[20px] font-semibold p-[20px] text-gray-500 bg-white flex items-center gap-[20px] border-t-2'><FaUser className='text-blue-500'/> ACCOUNT SETTING</Link>
             <Link className={`text-[17px]  ${!show ? 'text-gray-600 bg-white font-normal': 'bg-cyan-50 font-semibold text-sky-600'}  p-[10px]  flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold`} onClick={()=>linkhandler(1)}>Personal Information</Link>
             <Link className='text-[17px] font-normal text-gray-600 p-[10px] bg-white flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold'>Manage Addresses</Link>
@@ -47,6 +56,7 @@ const Account = () => {
         <div className='bg-cyan-50 h-[auto] w-[70%] mt-[20px] ml-[50px] rounded-[6px]' >
             {show  ? <Personal/> : ''}
             {show2 ? <Wishlist/>: ''}
+            {show3 ? <Orders/>: ''}
         </div>
     </div>
   )

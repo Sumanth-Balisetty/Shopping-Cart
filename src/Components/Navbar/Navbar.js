@@ -35,7 +35,7 @@ const hanlderNav = ()=>{
         {show && <div className='h-[700px] lg:h-[650px] w-[250px] absolute right-[97px] top-[89px] bg-gray-900 rounded-lg flex flex-col items-center justify-start py-[10px] px-[10px]  text-white text-lg text-center font-semibold gap-[20px]'>
           <Link to='/cart'><FaCartShopping className='text-white text-3xl mt-[10px] lg:hidden '/></Link>       
             <Link className='w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]' to='/account'><FaUser/>Account</Link>
-            <Link  className='w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><RiFolderInfoFill/>  Your Orders</Link>
+            <Link  className='w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]' to='/orders'><RiFolderInfoFill/>  Your Orders</Link>
             <Link  className=' w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><FcOnlineSupport/> Help & Support</Link>
             <Link  className='w-[100%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><IoTerminalOutline />Terms & Conditions</Link>
                           <hr className='border-[1px] border-white w-[100%]' />
