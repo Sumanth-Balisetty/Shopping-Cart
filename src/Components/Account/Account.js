@@ -9,6 +9,7 @@ import Wishlist from '../Wishlist/Wishlist'
 import Orders from '../Orders/Orders'
 const Account = () => {
   const [show,setShow] = useState(false);
+  const [fullname,setFullname] = useState('G.v.s.Saiteja');
   const linkhandler=(id)=>{
     setShow(!show)
     setShow2(false)
@@ -34,7 +35,7 @@ const Account = () => {
             <img src={pf1} alt='' className='h-[100px] w-[100px] rounded-full'/>
             <div className='flex flex-col'>
                 <p className='text-[15px] font-semibold'>Hello,</p>
-                <p className='text-[23px] font-semibold'>G.Saiteja</p>
+                <p className='text-[23px] font-semibold'>{fullname}</p>
             </div>
             </div>
             <div className='flex flex-col mt-[15px] w-[300px]'>
@@ -54,7 +55,7 @@ const Account = () => {
           <Link className={`text-[17px] ${!show2 ? 'text-gray-600 bg-white font-normal': 'bg-cyan-50 font-semibold text-sky-600'} p-[10px] flex items-center justify-start pl-[60px]  gap-[20px] hover:bg-cyan-50 hover:text-sky-600 hover:font-semibold`} onClick={linkhandler2} >My Wishlist</Link>
         </div>
         <div className='bg-cyan-50 h-[auto] w-[70%] mt-[20px] ml-[50px] rounded-[6px]' >
-            {show  ? <Personal/> : ''}
+            {show  ? <Personal setFullname={setFullname} fullname={fullname}/>  : ''}
             {show2 ? <Wishlist/>: ''}
             {show3 ? <Orders/>: ''}
         </div>
