@@ -33,7 +33,7 @@ const editHandler = ()=>{
         <input type='text'className='h-[40px] bg-gray-50 outline-none border-[1px] border-slate-400 px-[10px] w-[250px]' disabled={block} />
         </div>
         <div className='mt-[100px]'>
-            <button className={`bg-gray-900 w-[150px] text-white py-[10px] rounded-lg text-semibold `}> Save</button>
+            <button className={`bg-cyan-400 w-[150px] text-white py-[10px] rounded-lg font-bold `}> Save</button>
         </div>
     </div>
   )

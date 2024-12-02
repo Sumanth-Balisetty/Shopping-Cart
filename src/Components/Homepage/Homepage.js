@@ -15,9 +15,7 @@ const Homepage = () => {
     const [show,setShow] = useState(false);
     const clicked = ()=>{
         setShow(true)
-        console.log('clicked',show)
     }
-    console.log(show)
   return (
     <div>
         <div className='sticky top-0 z-10'>
@@ -33,10 +31,15 @@ const Homepage = () => {
             <p>{value.name}</p>
             <div className='flex justify-between w-full items-center my-[10px] px-[20px]'>
                 <span>Rs/-{value.price}</span>
-                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-gray-900 hover:text-white ' onClick={()=>handlerBtn(value.id,)}>
+                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-cyan-50 hover:text-black ' onClick={()=>handlerBtn(value.id,)}>
                     <img src={cart} alt='cart' className='h-[20px]'/>
                     {added.includes(value.id) ? `item added` :`Add to cart`}</button>
+
                 </div>
+                <div className='flex justify-start w-[100%]'>
+                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-cyan-50 hover:text-black ' >Add to Wishlist</button>
+                </div>
+            
             </div>)
         }
     </div>
@@ -49,7 +52,7 @@ const Homepage = () => {
             <p>{value.name}</p>
             <div className='flex justify-between w-full items-center my-[10px] px-[20px]'>
                 <span>Rs/-{value.price}</span>
-                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-gray-900 hover:text-white ' onClick={()=>handlerBtn(value.id,)}>
+                <button className='flex gap-[10px] bg-gray-400  p-2 ml-[20px] rounded-lg items-center hover:bg-cyan-50 hover:text-black ' onClick={()=>handlerBtn(value.id,)}>
                     <img src={cart} alt='cart' className='h-[20px]'/>
                     {added.includes(value.id) ? `item added` :`Add to cart`}</button>
                 </div>

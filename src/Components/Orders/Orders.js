@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { FaArrowLeft } from 'react-icons/fa6'
+import { Link } from 'react-router-dom';
 
-const Orders = () => {
+const Orders = (title) => {
+  const [show,setShow] = useState(false);
+  useEffect(()=>{
+    if (title){
+      setShow((prev)=> (!prev))
+    }
+    else{
+      setShow(false)
+    }
+  },[title])
   return (
     <div className='pt-[30px] pl-[30px] flex h-[100vh] w-[100%] bg-cyan-50' >
-        {/* <p className='bg-white h-[20px] py-[25px] px-[20px] flex items-center rounded-full'><FaArrowLeft/></p> */}
+        {show &&  <Link className='bg-white h-[20px] py-[25px] px-[20px] flex items-center rounded-full' to='/cart'><FaArrowLeft/></Link> }
         <div className='w-[300px] h-[500px] bg-white flex flex-col gap-[10px] rounded-sm border-gray-300 border-[0.5px]  px-[20px] py-[20px] shadow-lg mr-[40px]'>
             <h1 className='text-xl font-bold'>Filters</h1>
             <p className='text-[18px] font-semibold mt-[10px]'>ORDER STATUS</p>

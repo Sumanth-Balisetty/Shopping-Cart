@@ -57,7 +57,7 @@ const Account = () => {
         <div className='bg-cyan-50 h-[auto] w-[70%] mt-[20px] ml-[50px] rounded-[6px]' >
             {show  ? <Personal setFullname={setFullname} fullname={fullname}/>  : ''}
             {show2 ? <Wishlist/>: ''}
-            {show3 ? <Orders/>: ''}
+            {show3 ? <Orders title={false}/>: ''}
         </div>
     </div>
   )

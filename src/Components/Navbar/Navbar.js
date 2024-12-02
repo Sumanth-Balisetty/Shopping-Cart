@@ -21,7 +21,7 @@ const hanlderNav = ()=>{
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                <FaSearch/>
             </span>
-            <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-lg py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
+            <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-lg py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for Products,Brands" type="text" name="search"/>
         </label>
         <h1 className='text-transparent lg:text-white text-3xl absolute left-[50%] font-semibold font-sans italic '>Shopify</h1>
             <div className='navbar-cart flex justify-center items-center p-[10px] gap-[2px]'>
@@ -39,7 +39,7 @@ const hanlderNav = ()=>{
             <Link  className=' w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><FcOnlineSupport/> Help & Support</Link>
             <Link  className='w-[100%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><IoTerminalOutline />Terms & Conditions</Link>
                           <hr className='border-[1px] border-white w-[100%]' />
-            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white'>Mens Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white' onClick={()=>clicked}>Mens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  border-transparent border-b-2 hover:border-white'>Womens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Kids Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Party Wear</Link>
