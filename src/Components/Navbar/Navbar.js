@@ -7,11 +7,14 @@ import { RiFolderInfoFill } from 'react-icons/ri'
 import { useState } from 'react';
 import { FcOnlineSupport } from 'react-icons/fc';
 import { IoTerminalOutline } from 'react-icons/io5';
-const Navbar = ({count},{clicked}) => {
+import { useSelector } from 'react-redux';
+
+const Navbar = () => {
 const [show,setShow] = useState(false);
 const hanlderNav = ()=>{
   setShow(!show)
 }
+const cartNum = useSelector((state)=>state.cartnumber.value)
   return (
     <div>
     <div className='header sticky top-0 '>
@@ -27,7 +30,7 @@ const hanlderNav = ()=>{
             <div className='navbar-cart flex justify-center items-center p-[10px] gap-[2px]'>
                 
                 <Link to='/cart'><FaCartShopping className='hidden  lg:block text-white text-3xl '/></Link>
-                <span className='text-transparent lg:text-white text-lg  flex justify-center items-center rounded-lg '>{count}</span>
+                <span className='text-transparent lg:text-white text-lg  flex justify-center items-center rounded-lg '>{cartNum}</span>
                 <div className='ml-[30px] flex items-center'>
                 <button className='text-white text-4xl ' onClick={hanlderNav}>{show?<ImMenu3/>:<ImMenu4/>}</button></div>
             </div>
@@ -39,7 +42,7 @@ const hanlderNav = ()=>{
             <Link  className=' w-[70%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><FcOnlineSupport/> Help & Support</Link>
             <Link  className='w-[100%] border-transparent border-b-2 hover:border-white items-center flex justify-center gap-[10px]'><IoTerminalOutline />Terms & Conditions</Link>
                           <hr className='border-[1px] border-white w-[100%]' />
-            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white' onClick={()=>clicked}>Mens Wear</Link>
+            <Link className=' w-[70%] border-transparent border-b-2 hover:border-white'>Mens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white  border-transparent border-b-2 hover:border-white'>Womens Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Kids Wear</Link>
             <Link className=' w-[70%] border-transparent border-b-2 hover:border-white '>Party Wear</Link>
