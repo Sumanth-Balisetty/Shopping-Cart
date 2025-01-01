@@ -7,9 +7,10 @@ import Personal from '../Personal/Personal'
 import { FaUser } from 'react-icons/fa6'
 import Wishlist from '../Wishlist/Wishlist'
 import Orders from '../Orders/Orders'
+import profilepic from '../../Images/4.jpg'
 const Account = () => {
   const [show,setShow] = useState(false);
-  const [fullname,setFullname] = useState('G.v.s.Saiteja');
+  const [fullname,setFullname] = useState('B.Sumanth');
   const linkhandler=(id)=>{
     setShow(!show)
     setShow2(false)
@@ -32,7 +33,7 @@ const Account = () => {
         <Link to='/home' className='bg-gray-900 text-white p-[10px] rounded-xl absolute top-[10px] right-[10px]'>Back</Link>
         <div className='ml-[90px] mt-[20px]'>
             <div className='flex justify-evenly items-center rounded-[6px] py-[10px] w-[300px] bg-white'>
-            <img src={pf1} alt='' className='h-[100px] w-[100px] rounded-full'/>
+            <img src={profilepic} alt='' className='h-[100px] w-[100px] rounded-full'/>
             <div className='flex flex-col'>
                 <p className='text-[15px] font-semibold'>Hello,</p>
                 <p className='text-[23px] font-semibold'>{fullname}</p>

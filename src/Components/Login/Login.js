@@ -3,7 +3,7 @@ import { IoEye, IoEyeOff } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import {Link} from 'react-router-dom';
 const Login = () => {
-    const [show,setShow] = useState(true);
+    const [show,setShow] = useState(false);
     const handler = ()=>{
         setShow(!show)
     }
